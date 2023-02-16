@@ -6,7 +6,7 @@ import { ApiTags } from "@nestjs/swagger/dist/decorators/api-use-tags.decorator"
 import { CreateMessageDto } from "./dto/create-message.dto";
 
 @ApiTags("Message")
-@Controller("Message")
+@Controller("message")
 export class MessageController {
   constructor(private MessageService: MessageService) {}
 
