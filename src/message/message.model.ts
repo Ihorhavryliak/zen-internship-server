@@ -1,10 +1,7 @@
 import { ApiProperty } from "@nestjs/swagger/dist/decorators";
-import { StringIterator } from "lodash";
 import {
-  BelongsToMany,
   Column,
   DataType,
-  HasMany,
   Model,
   Table,
 } from "sequelize-typescript";
