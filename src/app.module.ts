@@ -1,9 +1,16 @@
+import { User } from './user/user.model';
+import { UserModule } from './user/user.module';
 import { Module } from "@nestjs/common";
 import { ConfigModule } from "@nestjs/config";
 import { SequelizeModule } from "@nestjs/sequelize";
-import { Message } from "./message/message.model";
-import { MessageModule } from "./message/message.module";
-
+import { AuthModule } from './auth/auth.module';
+import { PostService } from './post/post.service';
+import { PostController } from './post/post.controller';
+import { PostModule } from './post/post.module';
+import { Post } from './post/post.model';
+import { FilesModule } from './files/files.module';
+import {ServeStaticModule} from "@nestjs/serve-static";
+import * as path from 'path';
 
 @Module({
   controllers: [],
@@ -12,6 +19,9 @@ import { MessageModule } from "./message/message.module";
     ConfigModule.forRoot({
       envFilePath: ".env",
     }),
+    ServeStaticModule.forRoot({
+      rootPath: path.resolve( __dirname, 'static'),
+  }),
     SequelizeModule.forRoot({
       dialect: "postgres",
       host: process.env.POSTGRES_HOST,
@@ -19,10 +29,13 @@ import { MessageModule } from "./message/message.module";
       username: process.env.POSTGRES_USER,
       password: process.env.POSTGRES_PASSWORD,
       database: process.env.POSTGRES_DB,
-      models: [Message],
+      models: [User, Post],
       autoLoadModels: true,
     }),
-    MessageModule,
+    UserModule,
+    AuthModule,
+    PostModule,
+    FilesModule
   ],
 })
 export class AppModule {}

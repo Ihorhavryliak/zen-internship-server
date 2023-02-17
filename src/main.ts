@@ -4,7 +4,7 @@ import { SwaggerModule } from "@nestjs/swagger/dist";
 import { AppModule } from "./app.module";
 
 async function start() {
-  const PORT = process.env.PORT || 4000;
+  const PORT = process.env.PORT || 5000;
   const app = await NestFactory.create(AppModule, { cors: true });
   app.enableCors({
     origin: [process.env.FRONT_URL_SITE],

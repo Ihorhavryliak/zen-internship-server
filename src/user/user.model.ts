@@ -1,18 +1,21 @@
 import { ApiProperty } from "@nestjs/swagger/dist/decorators";
 import {
+  BelongsToMany,
   Column,
   DataType,
+  HasMany,
   Model,
   Table,
 } from "sequelize-typescript";
+import { Post } from "src/post/post.model";
 interface UserCreatorsAttrs {
   name: string;
   email: string;
-  message: string;
+  password: string;
 }
 
-@Table({ tableName: "messages" })
-export class Message extends Model<Message, UserCreatorsAttrs> {
+@Table({ tableName: "users" })
+export class User extends Model<User, UserCreatorsAttrs> {
   @ApiProperty({ example: "1", description: "Uniq indemnificator" })
   @Column({
     type: DataType.INTEGER,
@@ -23,14 +26,17 @@ export class Message extends Model<Message, UserCreatorsAttrs> {
   id: number;
 
   @ApiProperty({ example: "Helen", description: "Name" })
-  @Column({ type: DataType.STRING, allowNull: false })
+  @Column({ type: DataType.STRING, allowNull: true })
   name: string;
 
   @ApiProperty({ example: "exam@gmail.com", description: "Email" })
   @Column({ type: DataType.STRING, allowNull: false })
   email: string;
 
-  @ApiProperty({ example: "I want to do you...", description: "Message" })
-  @Column({ type: DataType.STRING, defaultValue: false })
-  message: string;
+  @ApiProperty({ example: "1234", description: "Password" })
+  @Column({ type: DataType.STRING, allowNull: false  })
+  password: string;
+
+  @HasMany(()=> Post)
+  posts: Post[];
 }
