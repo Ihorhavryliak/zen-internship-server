@@ -7,7 +7,7 @@ import {
   Model,
   Table,
 } from "sequelize-typescript";
-import { Post } from "src/post/post.model";
+import { Posts } from "src/post/post.model";
 interface UserCreatorsAttrs {
   name: string;
   email: string;
@@ -37,6 +37,6 @@ export class User extends Model<User, UserCreatorsAttrs> {
   @Column({ type: DataType.STRING, allowNull: false  })
   password: string;
 
-  @HasMany(()=> Post)
-  posts: Post[];
+  @HasMany(()=> Posts)
+  posts: Posts[];
 }

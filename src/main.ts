@@ -1,3 +1,4 @@
+import { EventsGateway } from './events/events.gateway';
 import { NestFactory } from "@nestjs/core";
 import { DocumentBuilder } from "@nestjs/swagger";
 import { SwaggerModule } from "@nestjs/swagger/dist";
@@ -11,6 +12,10 @@ async function start() {
     methods: ["GET", "HEAD", "PUT", "PATCH", "POST", "DELETE"],
     credentials: true,
   });
+  //socket
+  const eventsGateway = app.get(EventsGateway);
+  
+  setInterval(()=> eventsGateway.sendMessage, 2000)
 
   const config = new DocumentBuilder()
     .setTitle("New app")

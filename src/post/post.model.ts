@@ -10,14 +10,16 @@ import {
 } from "sequelize-typescript";
 import { User } from "src/user/user.model";
 interface PostCreatorsAttrs {
-  title: string;
-  content: string;
-  userId: number;
-  image: string;
+  name: string;
+  email: string;
+  message: string; 
+  homePage: string; 
+  userId: number; 
+  image: string; 
 }
-
-@Table({ tableName: "posts" })
-export class Post extends Model<Post, PostCreatorsAttrs> {
+ 
+@Table({ tableName: "post_user" })
+export class Posts extends Model<Posts, PostCreatorsAttrs> {
   @ApiProperty({ example: "1", description: "Uniq indemnificator" })
   @Column({
     type: DataType.INTEGER,
@@ -29,14 +31,22 @@ export class Post extends Model<Post, PostCreatorsAttrs> {
 
   @ApiProperty({ example: "Helen", description: "Name" })
   @Column({ type: DataType.STRING, allowNull: true })
-  title: string;
+  name: string;
 
   @ApiProperty({ example: "exam@gmail.com", description: "Email" })
   @Column({ type: DataType.STRING, allowNull: false })
-  content: string;
+  email: string;
+
+  @ApiProperty({ example: "exam@gmail.com", description: "Email" })
+  @Column({ type: DataType.STRING, allowNull: false })
+  message: string;
+
+  @ApiProperty({ example: "exam@gmail.com", description: "Email" })
+  @Column({ type: DataType.STRING, allowNull: true })
+  homePage: string;
 
   @ApiProperty({ example: "1234", description: "Password" })
-  @Column({ type: DataType.STRING, allowNull: false })
+  @Column({ type: DataType.STRING })
   image: string;
 
   @ForeignKey(() => User)

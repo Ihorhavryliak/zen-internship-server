@@ -7,9 +7,10 @@ import { AuthModule } from './auth/auth.module';
 import { PostService } from './post/post.service';
 import { PostController } from './post/post.controller';
 import { PostModule } from './post/post.module';
-import { Post } from './post/post.model';
+import { Posts } from './post/post.model';
 import { FilesModule } from './files/files.module';
 import {ServeStaticModule} from "@nestjs/serve-static";
+import { EventsModule } from './events/events.module';
 import * as path from 'path';
 
 @Module({
@@ -29,13 +30,14 @@ import * as path from 'path';
       username: process.env.POSTGRES_USER,
       password: process.env.POSTGRES_PASSWORD,
       database: process.env.POSTGRES_DB,
-      models: [User, Post],
+      models: [User, Posts],
       autoLoadModels: true,
     }),
     UserModule,
     AuthModule,
     PostModule,
-    FilesModule
+    FilesModule,
+    EventsModule
   ],
 })
 export class AppModule {}
