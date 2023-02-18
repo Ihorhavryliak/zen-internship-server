@@ -7,11 +7,12 @@ import { AuthModule } from "src/auth/auth.module";
 import { Posts } from "src/post/post.model";
 
 @Module({
-  controllers: [UserController],
   providers: [UserService],
-  imports: [SequelizeModule.forFeature([User, Posts]), 
-  forwardRef(() => AuthModule),
-],
+  controllers: [UserController],
+  imports: [
+    SequelizeModule.forFeature([User, Posts]),
+    forwardRef(() => AuthModule),
+  ],
   exports: [UserService],
 })
 export class UserModule {}

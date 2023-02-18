@@ -1,17 +1,15 @@
-import { User } from './user/user.model';
-import { UserModule } from './user/user.module';
+import { User } from "./user/user.model";
+import { UserModule } from "./user/user.module";
 import { Module } from "@nestjs/common";
 import { ConfigModule } from "@nestjs/config";
 import { SequelizeModule } from "@nestjs/sequelize";
-import { AuthModule } from './auth/auth.module';
-import { PostService } from './post/post.service';
-import { PostController } from './post/post.controller';
-import { PostModule } from './post/post.module';
-import { Posts } from './post/post.model';
-import { FilesModule } from './files/files.module';
-import {ServeStaticModule} from "@nestjs/serve-static";
-import { EventsModule } from './events/events.module';
-import * as path from 'path';
+import { AuthModule } from "./auth/auth.module";
+import { PostModule } from "./post/post.module";
+import { Posts } from "./post/post.model";
+import { FilesModule } from "./files/files.module";
+import { ServeStaticModule } from "@nestjs/serve-static";
+import { EventsModule } from "./events/events.module";
+import * as path from "path";
 
 @Module({
   controllers: [],
@@ -21,8 +19,8 @@ import * as path from 'path';
       envFilePath: ".env",
     }),
     ServeStaticModule.forRoot({
-      rootPath: path.resolve( __dirname, 'static'),
-  }),
+      rootPath: path.resolve(__dirname, "static"),
+    }),
     SequelizeModule.forRoot({
       dialect: "postgres",
       host: process.env.POSTGRES_HOST,
@@ -37,7 +35,7 @@ import * as path from 'path';
     AuthModule,
     PostModule,
     FilesModule,
-    EventsModule
+    EventsModule,
   ],
 })
 export class AppModule {}

@@ -1,6 +1,5 @@
 import { ApiProperty } from "@nestjs/swagger/dist/decorators";
 import {
-  BelongsToMany,
   Column,
   DataType,
   HasMany,
@@ -34,9 +33,9 @@ export class User extends Model<User, UserCreatorsAttrs> {
   email: string;
 
   @ApiProperty({ example: "1234", description: "Password" })
-  @Column({ type: DataType.STRING, allowNull: false  })
+  @Column({ type: DataType.STRING, allowNull: false })
   password: string;
 
-  @HasMany(()=> Posts)
+  @HasMany(() => Posts)
   posts: Posts[];
 }
