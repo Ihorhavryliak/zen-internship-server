@@ -7,7 +7,7 @@ import { ApiTags } from "@nestjs/swagger/dist/decorators/api-use-tags.decorator"
 import { CreateUserDto } from "./dto/create-user.dto";
 
 @ApiTags("User")
-@Controller("users")
+@Controller("user")
 export class UserController {
   constructor(private UserService: UserService) {}
   @ApiOperation({ summary: "Create user" })
