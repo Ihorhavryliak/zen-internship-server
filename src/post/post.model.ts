@@ -54,7 +54,7 @@ export class Posts extends Model<Posts, PostCreatorsAttrs> {
   file: string;
 
   @ApiProperty({ example: "34", description: "userId - force on user id" })
-  @ForeignKey(() => User)
+/*   @ForeignKey(() => User) */
   @Column({ type: DataType.INTEGER })
   userId: number;
 
