@@ -20,7 +20,7 @@ export class CreatePostDto {
   readonly homePage: string;
   @ApiProperty({ example: "34", description: "userId - force on user id" })
   @IsNumber({}, { message: "Should be number" })
-  readonly userId: number;
+  readonly userId: number| null;
   @ApiProperty({
     example: "34",
     description: "childId  - force on main post id",
