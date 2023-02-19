@@ -18,7 +18,7 @@ interface PostCreatorsAttrs {
   file: string;
 }
 
-@Table({ tableName: "posts" })
+@Table({ tableName: "postsz" })
 export class Posts extends Model<Posts, PostCreatorsAttrs> {
   @ApiProperty({ example: "1", description: "Uniq indemnificator" })
   @Column({
@@ -53,13 +53,13 @@ export class Posts extends Model<Posts, PostCreatorsAttrs> {
   @Column({ type: DataType.STRING })
   file: string;
 
- /*  @ApiProperty({ example: "34", description: "userId - force on user id" })
+  @ApiProperty({ example: "34", description: "userId - force on user id" })
   @ForeignKey(() => User)
   @Column({ type: DataType.INTEGER })
-  userId: number; */
+  userId: number;
 
- /*  @BelongsTo(() => User)
-  author: User; */
+  @BelongsTo(() => User)
+  author: User;
 
   @ApiProperty({
     example: "null",

@@ -19,7 +19,7 @@ export class User extends Model<User, UserCreatorsAttrs> {
   id: number;
 
   @ApiProperty({ example: "Helen", description: "Name" })
-  @Column({ type: DataType.STRING})
+  @Column({ type: DataType.STRING, allowNull: true })
   name: string;
 
   @ApiProperty({ example: "exam@gmail.com", description: "Email" })
@@ -30,6 +30,6 @@ export class User extends Model<User, UserCreatorsAttrs> {
   @Column({ type: DataType.STRING, allowNull: false })
   password: string;
 
-  /* @HasMany(() => Posts)
-  posts: Posts[]; */
+  @HasMany(() => Posts)
+  posts: Posts[];
 }
