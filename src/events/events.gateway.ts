@@ -9,7 +9,7 @@ import { Server } from "socket.io";
   cors: {
     credentials: true,
     methods: ["GET", "POST"],
-    origin: [`${process.env.FRONT_URL_SITE}`],
+    origin: [/* `${process.env.FRONT_URL_SITE}` */'https://zen-intership-web.onrender.com/'],
   },
 })
 export class EventsGateway {
