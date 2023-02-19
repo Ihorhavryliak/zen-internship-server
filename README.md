@@ -1,75 +1,62 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+# Message app
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
-
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
-
+ [Message app](https://zen-intership-web.onrender.com/)
+#
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+The Message App is a web-based platform that allows users to leave comments on a website. All user comments are saved to a relational database and can be sorted and displayed in a table format.
 
-## Installation
+# Back-end
+## Getting Started:
+To get started with the Message App, follow these steps:
+1. Clone the repository
+2. In the terminal enter command `npm i`
 
-```bash
-$ npm install
-```
+## Create file `.env` with variables:
+1. `PORT= ` ""; //server port. Example: `=5000`
+2. `POSTGRES_HOST= ` ""; //postgres host. Example: `=localhost`
+3. `POSTGRES_USER = ` ""; // base date user name. Example: `=postgres`
+4. `POSTGRES_DB =  ` ""; //base date  name. Example: `=user_postgres`
+5. `POSTGRES_PASSWORD =  ` ""; //base date  name. Example: `=1234`
+6. `POSTGRES_PORT =  ` ""; //postgres port. Example: `=5432`
+7. `FRONT_URL_SITE =  ` ""; // web url site . Example: `=http://localhost:3000`
+8. `PRIVET_KEY =  ` ""; // fow jwt (not realized) . Example: `=f782824f6b41f4c4650c9846d1d`
 
-## Running the app
+## Run
+1. Run  by running `npm run dev` in the project directory 
+2. Go to Front-end repo:  [front-end repo](https://github.com/Ihorhavryliak/zen-intership-web). (If you do not clone and install Front-end repo)
+#
+# Features
+The Message App offers the following features:
 
-```bash
-# development
-$ npm run start
+User Comments: Users can leave comments on the website, which are saved to a relational database.
 
-# watch mode
-$ npm run start:dev
+User Answer: Users can leave answer on comments on the website, which are saved to a relational database.
 
-# production mode
-$ npm run start:prod
-```
+Comment Sorting: The app provides the ability to sort comments by User Name, E-mail, and date added (in both ascending and descending order).
 
-## Test
+Pagination: Comments are displayed in groups of 25 per page.
 
-```bash
-# unit tests
-$ npm run test
+Security: The app includes measures to protect against XSS and SQL injection attacks.
 
-# e2e tests
-$ npm run test:e2e
+Design: The app includes a simple CSS design.
 
-# test coverage
-$ npm run test:cov
-```
+# Technologies Used
+The Message App is built using the following technologies:
 
-## Support
+React: A JavaScript library for building user interfaces.
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+Redux: A JavaScript library for to manage the state 
 
-## Stay in touch
+Node.js: A JavaScript runtime environment for building server-side applications.
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+Nest.js: A Node.js web application framework for building APIs and web servers.
 
-## License
+Postgres: A relational database for storing data.
 
-Nest is [MIT licensed](LICENSE).
-# zen-internship-server
-# zen-internship-server
+WebSocket (WS): A WebSocket (WS) for get and send message.
+
+CSS / Bootstrap 5: A stylesheet language for styling web pages.
+
+
+
