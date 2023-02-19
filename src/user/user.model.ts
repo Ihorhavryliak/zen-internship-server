@@ -1,11 +1,5 @@
 import { ApiProperty } from "@nestjs/swagger/dist/decorators";
-import {
-  Column,
-  DataType,
-  HasMany,
-  Model,
-  Table,
-} from "sequelize-typescript";
+import { Column, DataType, HasMany, Model, Table } from "sequelize-typescript";
 import { Posts } from "src/post/post.model";
 interface UserCreatorsAttrs {
   name: string;

@@ -1,4 +1,4 @@
-import { EventsGateway } from './events/events.gateway';
+import { EventsGateway } from "./events/events.gateway";
 import { NestFactory } from "@nestjs/core";
 import { DocumentBuilder } from "@nestjs/swagger";
 import { SwaggerModule } from "@nestjs/swagger/dist";
@@ -14,14 +14,14 @@ async function start() {
   });
   //socket
   const eventsGateway = app.get(EventsGateway);
-  
-  setInterval(()=> eventsGateway.sendMessage, 2000)
+
+  setInterval(() => eventsGateway.sendMessage, 2000);
 
   const config = new DocumentBuilder()
-    .setTitle("New app")
+    .setTitle("Message APP")
     .setDescription("Documentation REST API")
-    .setTitle("My test app")
-    .addTag("New App")
+    .setTitle("Message APP")
+    .addTag("Message APP")
     .build();
 
   const document = SwaggerModule.createDocument(app, config);

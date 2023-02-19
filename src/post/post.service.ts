@@ -31,9 +31,12 @@ export class PostService {
       userId: dto.userId,
       childId: dto.childId,
     };
-    
+
     const fileName = await this.fileService.createFile(file);
-    const post = await this.postRepository.create({ ...postObj, file: fileName });
+    const post = await this.postRepository.create({
+      ...postObj,
+      file: fileName,
+    });
     this.eventsGateway.sendMessage(post);
     return post;
   }

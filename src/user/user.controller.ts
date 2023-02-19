@@ -1,12 +1,6 @@
 import { ValidationPipe } from "./../pipes/validation.pipe";
 import { UserService } from "./user.service";
-import {
-  Body,
-  Controller,
-  Get,
-  Post,
-  UsePipes,
-} from "@nestjs/common";
+import { Body, Controller, Get, Post, UsePipes } from "@nestjs/common";
 import { ApiOperation, ApiResponse } from "@nestjs/swagger/dist";
 import { User } from "./user.model";
 import { ApiTags } from "@nestjs/swagger/dist/decorators/api-use-tags.decorator";

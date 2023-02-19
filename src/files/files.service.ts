@@ -18,7 +18,7 @@ export class FilesService {
       )
     ) {
       throw new HttpException(
-        "File should  be 'jpg/jpeg/png/gif/txt/plain' ",
+        "File should  be 'jpg/jpeg/png/gif/txt/plain'",
         HttpStatus.FORBIDDEN
       );
     }
