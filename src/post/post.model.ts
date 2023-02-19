@@ -18,7 +18,7 @@ interface PostCreatorsAttrs {
   file: string;
 }
 
-@Table({ tableName: "posts" })
+@Table({ tableName: "post" })
 export class Posts extends Model<Posts, PostCreatorsAttrs> {
   @ApiProperty({ example: "1", description: "Uniq indemnificator" })
   @Column({
