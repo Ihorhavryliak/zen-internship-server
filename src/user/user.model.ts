@@ -30,6 +30,6 @@ export class User extends Model<User, UserCreatorsAttrs> {
   @Column({ type: DataType.STRING, allowNull: false })
   password: string;
 
-  @HasMany(() => Posts)
-  posts: Posts[];
+  /* @HasMany(() => Posts)
+  posts: Posts[]; */
 }
