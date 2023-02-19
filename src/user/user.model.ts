@@ -7,7 +7,7 @@ interface UserCreatorsAttrs {
   password: string;
 }
 
-@Table({ tableName: "user_information" })
+@Table({ tableName: "users" })
 export class User extends Model<User, UserCreatorsAttrs> {
   @ApiProperty({ example: "1", description: "Uniq indemnificator" })
   @Column({
