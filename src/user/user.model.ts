@@ -19,15 +19,15 @@ export class User extends Model<User, UserCreatorsAttrs> {
   id: number;
 
   @ApiProperty({ example: "Helen", description: "Name" })
-  @Column({ type: DataType.STRING, allowNull: true, defaultValue: 'test' },)
+  @Column({ type: DataType.STRING, allowNull: true })
   name: string;
 
   @ApiProperty({ example: "exam@gmail.com", description: "Email" })
-  @Column({ type: DataType.STRING, allowNull: false, defaultValue: 'exam@gmail.com' })
+  @Column({ type: DataType.STRING, allowNull: false })
   email: string;
 
   @ApiProperty({ example: "1234", description: "Password" })
-  @Column({ type: DataType.STRING, allowNull: false,  defaultValue: '1234' })
+  @Column({ type: DataType.STRING, allowNull: false })
   password: string;
 
   @HasMany(() => Posts)

@@ -7,10 +7,18 @@ import { Server } from "socket.io";
 @WebSocketGateway({
   namespace: "events",
   cors: {
-    credentials: true,
-    methods: ["GET", "POST"],
-    origin: [/* `${process.env.FRONT_URL_SITE}` */'https://zen-intership-web.onrender.com/'],
+    origin: (origin, callback) => {
+      // Check if the origin is allowed
+      const allowedOrigins = ["https://zen-intership-web.onrender.com"];
+      if (!allowedOrigins.includes(origin)) {
+        return callback(new Error("Origin not allowed"), false);
+      }
+      // Return the allowed origin
+      return callback(null, true);
+    },
   },
+  credentials: true,
+  methods: ["GET", "POST"],
 })
 export class EventsGateway {
   @WebSocketServer()
