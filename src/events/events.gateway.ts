@@ -9,7 +9,7 @@ import { Server } from "socket.io";
   cors: {
     origin: (origin, callback) => {
       // Check if the origin is allowed
-      const allowedOrigins = ["https://zen-intership-web.onrender.com"];
+      const allowedOrigins = [`${process.env.FRONT_URL_SITE}`];
       if (!allowedOrigins.includes(origin)) {
         return callback(new Error("Origin not allowed"), false);
       }
