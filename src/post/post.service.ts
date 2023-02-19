@@ -2,7 +2,7 @@ import { EventsGateway } from "./../events/events.gateway";
 import { Injectable } from "@nestjs/common";
 import { CreatePostDto } from "./dto/create-post.dto";
 import { InjectModel } from "@nestjs/sequelize";
-import { Posts } from "./Post.model";
+import { Posts } from "./post.model";
 import { FilesService } from "../files/files.service";
 import * as sanitizeHtml from "sanitize-html";
 
