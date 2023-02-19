@@ -9,7 +9,7 @@ import { Server } from "socket.io";
   cors: {
     credentials: true,
     methods: ["GET", "POST"],
-    origin: ["http://localhost:3000"],
+    origin: [`${process.env.FRONT_URL_SITE}`],
   },
 })
 export class EventsGateway {
