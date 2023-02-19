@@ -3,7 +3,7 @@ import { Posts } from "./post.model";
 import { ApiResponse } from "@nestjs/swagger/dist";
 import { ApiOperation } from "@nestjs/swagger/dist";
 import {
-  Get,
+  Get, Query,
 } from "@nestjs/common";
 import {
   Body,
@@ -26,10 +26,10 @@ export class PostController {
     return this.postService.create(dto, file);
   }
 
-  @ApiOperation({ summary: "Get all posts" })
+  @ApiOperation({ summary: "Sort Name all posts and get all posts" })
   @ApiResponse({ status: 200, type: [Posts] })
-  @Get()
-  getAll() {
-    return this.postService.getAllPosts();
+  @Get('sort-name')
+  sortName(@Query('query') query: string, @Query('page') page: number) {
+    return this.postService.sortAllPosts(query, page);
   }
 }

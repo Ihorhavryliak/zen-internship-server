@@ -18,7 +18,7 @@ interface PostCreatorsAttrs {
   file: string;
 }
 
-@Table({ tableName: "post_users_test_" })
+@Table({ tableName: "posts" })
 export class Posts extends Model<Posts, PostCreatorsAttrs> {
   @ApiProperty({ example: "1", description: "Uniq indemnificator" })
   @Column({
@@ -62,5 +62,7 @@ export class Posts extends Model<Posts, PostCreatorsAttrs> {
 
   @HasMany(() => Posts)
   child: Posts[];
+
+
 
 }

@@ -34,6 +34,8 @@ export class FilesService {
     }
 
     try {
+      //clean cache
+      sharp.cache({ files: 0 });
       const fileName =
         uuid.v4() + file.originalname.slice(file.originalname.lastIndexOf("."));
       const filePath = path.resolve(__dirname, "..", "static");
@@ -52,15 +54,13 @@ export class FilesService {
         const image = await sharp(file.buffer);
         metadata = await image.metadata();
       }
-
       // save image
       if (isFileTxt && (metadata.width > 320 || metadata.height > 240)) {
         await sharp(file.buffer)
           .resize(320, 240)
           .webp({ effort: 3 })
           .toFile(filePath + "/" + fileName);
-      }
-      {
+      } else {
         fs.writeFileSync(path.join(filePath, fileName), file.buffer);
       }
       return fileName;
