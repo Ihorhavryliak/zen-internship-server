@@ -18,7 +18,7 @@ interface PostCreatorsAttrs {
   file: string;
 }
 
-@Table({ tableName: "post" })
+@Table({ tableName: "user_posts" })
 export class Posts extends Model<Posts, PostCreatorsAttrs> {
   @ApiProperty({ example: "1", description: "Uniq indemnificator" })
   @Column({
@@ -58,8 +58,8 @@ export class Posts extends Model<Posts, PostCreatorsAttrs> {
   @Column({ type: DataType.INTEGER })
   userId: number;
 
-  @BelongsTo(() => User)
-  author: User;
+  /* @BelongsTo(() => User)
+  author: User; */
 
   @ApiProperty({
     example: "34",

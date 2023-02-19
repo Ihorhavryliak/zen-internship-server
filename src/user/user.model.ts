@@ -7,7 +7,7 @@ interface UserCreatorsAttrs {
   password: string;
 }
 
-@Table({ tableName: "users" })
+@Table({ tableName: "nb_users" })
 export class User extends Model<User, UserCreatorsAttrs> {
   @ApiProperty({ example: "1", description: "Uniq indemnificator" })
   @Column({
@@ -30,6 +30,6 @@ export class User extends Model<User, UserCreatorsAttrs> {
   @Column({ type: DataType.STRING, allowNull: false })
   password: string;
 
-  @HasMany(() => Posts)
-  posts: Posts[];
+/*   @HasMany(() => Posts)
+  posts: Posts[]; */
 }
