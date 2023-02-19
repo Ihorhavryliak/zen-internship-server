@@ -7,7 +7,7 @@ interface UserCreatorsAttrs {
   password: string;
 }
 
-@Table({ tableName: "nb_users" })
+@Table({ tableName: "user_information" })
 export class User extends Model<User, UserCreatorsAttrs> {
   @ApiProperty({ example: "1", description: "Uniq indemnificator" })
   @Column({
@@ -16,7 +16,7 @@ export class User extends Model<User, UserCreatorsAttrs> {
     autoIncrement: true,
     primaryKey: true,
   })
-  id: number;
+  id: number;z
 
   @ApiProperty({ example: "Helen", description: "Name" })
   @Column({ type: DataType.STRING, allowNull: true })
@@ -30,6 +30,6 @@ export class User extends Model<User, UserCreatorsAttrs> {
   @Column({ type: DataType.STRING, allowNull: false })
   password: string;
 
-/*   @HasMany(() => Posts)
-  posts: Posts[]; */
+  @HasMany(() => Posts)
+  posts: Posts[];
 }
