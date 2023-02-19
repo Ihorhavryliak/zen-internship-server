@@ -16,7 +16,7 @@ export class User extends Model<User, UserCreatorsAttrs> {
     autoIncrement: true,
     primaryKey: true,
   })
-  id: number;z
+  id: number;
 
   @ApiProperty({ example: "Helen", description: "Name" })
   @Column({ type: DataType.STRING, allowNull: true })
