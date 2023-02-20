@@ -18,7 +18,7 @@ interface PostCreatorsAttrs {
   file: string;
 }
 
-@Table({ tableName: "posts" })
+@Table({ tableName: "post" })
 export class Posts extends Model<Posts, PostCreatorsAttrs> {
   @ApiProperty({ example: "1", description: "Uniq indemnificator" })
   @Column({
@@ -65,7 +65,6 @@ export class Posts extends Model<Posts, PostCreatorsAttrs> {
     example: "null",
     description: "childId  - force on main post id",
   })
-  
   @ForeignKey(() => Posts)
   @Column({ type: DataType.INTEGER })
   childId: number;
