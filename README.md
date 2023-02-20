@@ -22,6 +22,9 @@ To get started with the Message App, follow these steps:
 7. `FRONT_URL_SITE =  ` ""; // web url site . Example: `=http://localhost:3000`
 8. `PRIVET_KEY =  ` ""; // fow jwt (not realized) . Example: `=f782824f6b41f4c4650c9846d1d`
 
+## pgAdmin 4:
+1. Install `pgAdmin 4` and connect in file `.env` 
+
 ## Run
 1. Run  by running `npm run dev` in the project directory 
 2. Go to Front-end repo:  [front-end repo](https://github.com/Ihorhavryliak/zen-intership-web). (If you do not clone and install Front-end repo)

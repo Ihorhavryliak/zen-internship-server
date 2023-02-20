@@ -65,6 +65,7 @@ export class Posts extends Model<Posts, PostCreatorsAttrs> {
     example: "null",
     description: "childId  - force on main post id",
   })
+  
   @ForeignKey(() => Posts)
   @Column({ type: DataType.INTEGER })
   childId: number;

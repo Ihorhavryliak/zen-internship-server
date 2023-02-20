@@ -22,8 +22,8 @@ export class CreatePostDto {
   @IsNumber({}, { message: "Should be number" })
   readonly userId: number| null;
   @ApiProperty({
-    example: "34",
-    description: "childId  - force on main post id",
+    example: "null",
+    description: "childId  - force on another post id, if null force on main post",
   })
   @IsNumber({}, { message: "Should be number" })
   readonly childId: number | null;
