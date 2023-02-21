@@ -21,10 +21,49 @@ To get started with the Message App, follow these steps:
 5. `POSTGRES_PASSWORD =  ` ""; //base date  name. Example: `=1234`
 6. `POSTGRES_PORT =  ` ""; //postgres port. Example: `=5432`
 7. `FRONT_URL_SITE =  ` ""; // web url site . Example: `=http://localhost:3000`
-8. `PRIVET_KEY =  ` ""; // fow jwt (not realized) . Example: `=f782824f6b41f4c4650c9846d1d`
+8. `PRIVET_KEY =  ` ""; // jwt token key. Example: `=f782824f6b41f4c4650c9846d1d`
 
 ## pgAdmin 4:
 1. Install `pgAdmin 4` and connect in file `.env` 
+2. Create Data Base  name: `test_data`
+3. Create Data Base  password: `Zazapu1995`
+
+## file `.env` for Docker with variables:
+
+`PORT = 4000`
+
+`POSTGRES_HOST=postgres`
+
+`POSTGRES_USER=postgres`
+
+`POSTGRES_DB=test_data`
+
+`POSTGRES_PASSWORD=Zazapu1995`
+
+`POSTGRES_PORT=5432`
+
+`FRONT_URL_SITE=http://localhost:3000`
+
+`PRIVET_KEY=438ee5b8f782824f6b41f4c4650c9846`
+
+
+## file `.env` for Dev with variables::
+
+`PORT = 4000`
+
+`POSTGRES_HOST=localhost`
+
+`POSTGRES_USER=postgres`
+
+`POSTGRES_DB=test_data`
+
+`POSTGRES_PASSWORD=Zazapu1995`
+
+`POSTGRES_PORT=5432`
+
+`FRONT_URL_SITE=http://localhost:3000`
+
+`PRIVET_KEY=438ee5b8f782824f6b41f4c4650c9846`
 
 ## Run
 1. Run  by running `npm run dev` in the project directory 
