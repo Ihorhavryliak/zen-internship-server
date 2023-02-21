@@ -18,7 +18,7 @@ export class CreatePostDto {
   })
   @IsString({ message: "Should be string" })
   readonly homePage: string;
-  @ApiProperty({ example: "34", description: "userId - force on user id" })
+  @ApiProperty({ example: "1", description: "userId - force on user id" })
   @IsNumber({}, { message: "Should be number" })
   readonly userId: number| null;
   @ApiProperty({

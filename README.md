@@ -8,6 +8,7 @@ The Message App is a web-based platform that allows users to leave comments on a
 
 # Back-end
 ## Getting Started:
+`Recommended using the operating system Windows.`
 To get started with the Message App, follow these steps:
 1. Clone the repository
 2. In the terminal enter command `npm i`

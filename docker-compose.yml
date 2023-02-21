@@ -1,4 +1,4 @@
-version: '3.0'
+version: '4.0'
 
 services:
   main:
@@ -12,8 +12,8 @@ services:
       - /app/node_modules
     ports:
       - 4000:4000
-      - 9229:9229
-    command: npm run dev
+      - 9228:9228
+    command: npm run start:prod;
     depends_on:
       - postgres
     restart: always
